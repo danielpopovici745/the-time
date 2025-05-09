@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./src/style.css" />
+		<title>theTime</title>
+	</head>
+	<body class="flex h-screen justify-center items-center font-mono">
+		<div
+			class="mainContainer flex w-[80%] justify-center items-center max-w-[1200px] h-[50%] border-black border-[10px] border-solid rounded-[20px]">
+			<div class="content flex flex-col justify-center items-end">
+				<div class="timeZoneContainer flex gap-[6px]">
+					<h3
+						class="flex justify-center items-center italic text-[95%] text-gray-400">
+						Timezone
+					</h3>
+					<a href="#" data-micromodal-trigger="modal-1"
+						><img class="size-[20px]" src="./pen-to-square-solid.svg" alt=""
+					/></a>
+				</div>
+				<h1 class="text-[10vw]">TIME HERE</h1>
+				<h3>Date</h3>
+			</div>
+		</div>
+		<div
+			class="modal a micromodal-slide hidden fixed top-[0px] left-[0px] size-full bg-[rgba(0,0,0,0.7)] [&.is-open]:block"
+			id="modal-1"
+			aria-hidden="true">
+			<div class="modal__overlay" tabindex="-1">
+				<div
+					class="modal__container absolute flex flex-col gap-[10px] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white p-[20px] rounded-[20px] w-[70vw] h-auto"
+					role="dialog"
+					aria-modal="true"
+					aria-labelledby="modal-1-title">
+					<div class="titleContainer flex items-center">
+						<a
+							class="size-[0px] translate-x-[-13px] translate-y-[-30px] hover:cursor-pointer"
+							href="#"
+							data-micromodal-close=""
+							>X</a
+						>
+						<h2 class="modal__title" id="modal-1-title">Edit Timezone</h2>
+					</div>
+
+					<div
+						class="selectContainer flex justify-center items-center gap-[10px]">
+						<select
+							class="w-fit p-[5px] border-gray-300 border-[1px] hover:border-black"
+							name="timezones"
+							id="timezones"></select>
+						<button
+							class="changeTimezone font-[700] text-black hover:cursor-pointer"
+							data-micromodal-close
+							type="button">
+							Apply
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/localizedFormat.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/timezone.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+	<script src="./src/index.js"></script>
+</html>
